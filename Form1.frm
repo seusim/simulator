@@ -6,7 +6,7 @@ Begin VB.Form Form1
    ClientHeight    =   9180
    ClientLeft      =   48
    ClientTop       =   432
-   ClientWidth     =   16140
+   ClientWidth     =   13392
    Icon            =   "Form1.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -15,7 +15,7 @@ Begin VB.Form Form1
    Picture         =   "Form1.frx":16B92
    ScaleHeight     =   765
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1345
+   ScaleWidth      =   1116
    Begin VB.Frame Frame1 
       Appearance      =   0  'Flat
       BackColor       =   &H80000005&
@@ -433,26 +433,26 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   372
-      Left            =   15360
+      Left            =   9600
       TabIndex        =   39
-      Top             =   3000
+      Top             =   7800
       Width           =   732
    End
    Begin VB.TextBox Text4 
       Height          =   372
-      Left            =   13680
+      Left            =   8640
       TabIndex        =   38
       Text            =   "11950"
-      Top             =   3000
-      Width           =   1572
+      Top             =   7800
+      Width           =   852
    End
    Begin VB.TextBox Text3 
       Height          =   372
-      Left            =   13680
+      Left            =   7680
       TabIndex        =   37
       Text            =   "9680"
-      Top             =   2280
-      Width           =   1572
+      Top             =   7800
+      Width           =   852
    End
    Begin VB.PictureBox Picture2 
       Appearance      =   0  'Flat
@@ -938,9 +938,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   372
-      Left            =   13680
+      Left            =   10800
       TabIndex        =   1
-      Top             =   6720
+      Top             =   7800
       Width           =   2412
    End
    Begin VB.Label Label8 
@@ -963,18 +963,18 @@ Begin VB.Form Form1
    Begin VB.Label Label13 
       Caption         =   "Scale Y"
       Height          =   372
-      Left            =   13680
+      Left            =   8640
       TabIndex        =   41
-      Top             =   2760
-      Width           =   1572
+      Top             =   7560
+      Width           =   852
    End
    Begin VB.Label Label12 
       Caption         =   "Scale X"
       Height          =   372
-      Left            =   13680
+      Left            =   7680
       TabIndex        =   40
-      Top             =   2040
-      Width           =   1572
+      Top             =   7560
+      Width           =   852
    End
    Begin VB.Label Label11 
       Alignment       =   1  'Right Justify
@@ -1047,7 +1047,7 @@ Begin VB.Form Form1
       Width           =   1572
    End
    Begin VB.Label Label7 
-      Caption         =   "Fabio Listante - Università Telematica Internazionale UNINETTUNO v.32"
+      Caption         =   "SEUSIM v.33"
       BeginProperty Font 
          Name            =   "Segoe UI"
          Size            =   10.2
@@ -1060,8 +1060,8 @@ Begin VB.Form Form1
       Height          =   372
       Left            =   7680
       TabIndex        =   30
-      Top             =   8760
-      Width           =   8412
+      Top             =   8640
+      Width           =   5532
    End
    Begin VB.Label Label5 
       Caption         =   "%"
