@@ -3,19 +3,159 @@ Begin VB.Form Form1
    Appearance      =   0  'Flat
    BackColor       =   &H80000005&
    Caption         =   "SEU simulator"
-   ClientHeight    =   8412
+   ClientHeight    =   9180
    ClientLeft      =   48
    ClientTop       =   432
-   ClientWidth     =   16224
+   ClientWidth     =   16140
    Icon            =   "Form1.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    OLEDropMode     =   1  'Manual
    Picture         =   "Form1.frx":16B92
-   ScaleHeight     =   701
+   ScaleHeight     =   765
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1352
+   ScaleWidth      =   1345
+   Begin VB.Frame Frame1 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      Caption         =   "File Name  "
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   10.2
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000008&
+      Height          =   1092
+      Left            =   4440
+      TabIndex        =   63
+      Top             =   1920
+      Width           =   2292
+      Begin VB.OptionButton Option4 
+         Caption         =   "Indexed Label"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   10.2
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   252
+         Left            =   120
+         TabIndex        =   65
+         Top             =   720
+         Width           =   2052
+      End
+      Begin VB.OptionButton Option3 
+         Caption         =   "Sequential Label"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   10.2
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   252
+         Left            =   120
+         TabIndex        =   64
+         Top             =   360
+         Width           =   2052
+      End
+   End
+   Begin VB.Frame Frame2 
+      BackColor       =   &H80000005&
+      Caption         =   "Events Size Type"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   10.2
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1092
+      Left            =   240
+      TabIndex        =   60
+      Top             =   1920
+      Width           =   2292
+      Begin VB.OptionButton Option2 
+         Caption         =   "Flips per Megabit"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   10.2
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   252
+         Left            =   120
+         TabIndex        =   62
+         Top             =   720
+         Width           =   2052
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "SEU Total Amount"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   10.2
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   252
+         Left            =   120
+         TabIndex        =   61
+         Top             =   360
+         Width           =   2052
+      End
+   End
+   Begin VB.TextBox Text5 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   13.8
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   492
+      Left            =   4920
+      TabIndex        =   58
+      Text            =   "-"
+      Top             =   600
+      Width           =   492
+   End
+   Begin VB.CommandButton Command5 
+      Caption         =   "Seed Reset"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   10.2
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   492
+      Left            =   6000
+      TabIndex        =   57
+      Top             =   600
+      Width           =   1332
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "L"
       BeginProperty Font 
@@ -29,45 +169,9 @@ Begin VB.Form Form1
       EndProperty
       Height          =   495
       Index           =   10
-      Left            =   6840
-      TabIndex        =   58
-      Top             =   7680
-      Width           =   495
-   End
-   Begin VB.CommandButton Command2 
-      Caption         =   "L"
-      BeginProperty Font 
-         Name            =   "Webdings"
-         Size            =   20.4
-         Charset         =   2
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Index           =   9
-      Left            =   6840
-      TabIndex        =   57
-      Top             =   7080
-      Width           =   495
-   End
-   Begin VB.CommandButton Command2 
-      Caption         =   "L"
-      BeginProperty Font 
-         Name            =   "Webdings"
-         Size            =   20.4
-         Charset         =   2
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Index           =   8
       Left            =   6840
       TabIndex        =   56
-      Top             =   6480
+      Top             =   8520
       Width           =   495
    End
    Begin VB.CommandButton Command2 
@@ -82,10 +186,46 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Index           =   7
+      Index           =   9
       Left            =   6840
       TabIndex        =   55
-      Top             =   5880
+      Top             =   7920
+      Width           =   495
+   End
+   Begin VB.CommandButton Command2 
+      Caption         =   "L"
+      BeginProperty Font 
+         Name            =   "Webdings"
+         Size            =   20.4
+         Charset         =   2
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Index           =   8
+      Left            =   6840
+      TabIndex        =   54
+      Top             =   7320
+      Width           =   495
+   End
+   Begin VB.CommandButton Command2 
+      Caption         =   "L"
+      BeginProperty Font 
+         Name            =   "Webdings"
+         Size            =   20.4
+         Charset         =   2
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Index           =   7
+      Left            =   6840
+      TabIndex        =   53
+      Top             =   6720
       Width           =   495
    End
    Begin VB.CommandButton Command2 
@@ -102,8 +242,8 @@ Begin VB.Form Form1
       Height          =   495
       Index           =   6
       Left            =   6840
-      TabIndex        =   54
-      Top             =   5280
+      TabIndex        =   52
+      Top             =   6120
       Width           =   495
    End
    Begin VB.TextBox Text13 
@@ -119,9 +259,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   10
       Left            =   240
-      TabIndex        =   53
-      Text            =   "70"
-      Top             =   7680
+      TabIndex        =   51
+      Text            =   "280"
+      Top             =   8520
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -137,9 +277,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   9
       Left            =   240
-      TabIndex        =   52
-      Text            =   "50"
-      Top             =   7080
+      TabIndex        =   50
+      Text            =   "200"
+      Top             =   7920
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -155,9 +295,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   8
       Left            =   240
-      TabIndex        =   51
-      Text            =   "35"
-      Top             =   6480
+      TabIndex        =   49
+      Text            =   "140"
+      Top             =   7320
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -173,9 +313,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   7
       Left            =   240
-      TabIndex        =   50
-      Text            =   "25"
-      Top             =   5880
+      TabIndex        =   48
+      Text            =   "100"
+      Top             =   6720
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -191,9 +331,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   6
       Left            =   240
-      TabIndex        =   49
-      Text            =   "15"
-      Top             =   5280
+      TabIndex        =   47
+      Text            =   "60"
+      Top             =   6120
       Width           =   1092
    End
    Begin VB.TextBox Text14 
@@ -209,8 +349,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   10
       Left            =   1440
-      TabIndex        =   48
-      Top             =   7680
+      TabIndex        =   46
+      Top             =   8520
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -226,8 +366,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   9
       Left            =   1440
-      TabIndex        =   47
-      Top             =   7080
+      TabIndex        =   45
+      Top             =   7920
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -243,8 +383,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   8
       Left            =   1440
-      TabIndex        =   46
-      Top             =   6480
+      TabIndex        =   44
+      Top             =   7320
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -260,8 +400,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   7
       Left            =   1440
-      TabIndex        =   45
-      Top             =   5880
+      TabIndex        =   43
+      Top             =   6720
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -277,8 +417,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   6
       Left            =   1440
-      TabIndex        =   44
-      Top             =   5280
+      TabIndex        =   42
+      Top             =   6120
       Width           =   5292
    End
    Begin VB.CommandButton Command4 
@@ -294,24 +434,24 @@ Begin VB.Form Form1
       EndProperty
       Height          =   372
       Left            =   15360
-      TabIndex        =   41
-      Top             =   3960
+      TabIndex        =   39
+      Top             =   3000
       Width           =   732
    End
    Begin VB.TextBox Text4 
       Height          =   372
       Left            =   13680
-      TabIndex        =   40
+      TabIndex        =   38
       Text            =   "11950"
-      Top             =   3960
+      Top             =   3000
       Width           =   1572
    End
    Begin VB.TextBox Text3 
       Height          =   372
       Left            =   13680
-      TabIndex        =   39
+      TabIndex        =   37
       Text            =   "9680"
-      Top             =   3240
+      Top             =   2280
       Width           =   1572
    End
    Begin VB.PictureBox Picture2 
@@ -325,12 +465,12 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":ED52A
       ScaleHeight     =   1500
       ScaleWidth      =   2616
-      TabIndex        =   38
-      Top             =   1320
+      TabIndex        =   36
+      Top             =   360
       Width           =   2616
    End
    Begin VB.CommandButton Command3 
-      Caption         =   "Set"
+      Caption         =   ">"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   12
@@ -340,11 +480,11 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   5400
-      TabIndex        =   33
+      Height          =   492
+      Left            =   5520
+      TabIndex        =   31
       Top             =   600
-      Width           =   1095
+      Width           =   372
    End
    Begin VB.TextBox Text2 
       BeginProperty Font 
@@ -358,10 +498,10 @@ Begin VB.Form Form1
       EndProperty
       Height          =   492
       Left            =   2880
-      TabIndex        =   29
+      TabIndex        =   28
       Text            =   "5"
       Top             =   600
-      Width           =   1092
+      Width           =   732
    End
    Begin VB.CommandButton Command2 
       Caption         =   "L"
@@ -379,7 +519,7 @@ Begin VB.Form Form1
       Index           =   0
       Left            =   6840
       Picture         =   "Form1.frx":1079A7
-      TabIndex        =   28
+      TabIndex        =   27
       Top             =   1320
       UseMaskColor    =   -1  'True
       Width           =   495
@@ -398,8 +538,8 @@ Begin VB.Form Form1
       Height          =   495
       Index           =   5
       Left            =   6840
-      TabIndex        =   27
-      Top             =   4680
+      TabIndex        =   26
+      Top             =   5520
       Width           =   495
    End
    Begin VB.CommandButton Command2 
@@ -416,8 +556,8 @@ Begin VB.Form Form1
       Height          =   495
       Index           =   4
       Left            =   6840
-      TabIndex        =   26
-      Top             =   4080
+      TabIndex        =   25
+      Top             =   4920
       Width           =   495
    End
    Begin VB.CommandButton Command2 
@@ -434,8 +574,8 @@ Begin VB.Form Form1
       Height          =   495
       Index           =   3
       Left            =   6840
-      TabIndex        =   25
-      Top             =   3480
+      TabIndex        =   24
+      Top             =   4320
       Width           =   495
    End
    Begin VB.CommandButton Command2 
@@ -452,8 +592,8 @@ Begin VB.Form Form1
       Height          =   495
       Index           =   2
       Left            =   6840
-      TabIndex        =   24
-      Top             =   2880
+      TabIndex        =   23
+      Top             =   3720
       Width           =   495
    End
    Begin VB.CommandButton Command2 
@@ -470,8 +610,8 @@ Begin VB.Form Form1
       Height          =   495
       Index           =   1
       Left            =   6840
-      TabIndex        =   23
-      Top             =   2280
+      TabIndex        =   22
+      Top             =   3120
       Width           =   495
    End
    Begin VB.PictureBox Picture1 
@@ -486,8 +626,8 @@ Begin VB.Form Form1
       ScaleHeight     =   563
       ScaleMode       =   0  'User
       ScaleWidth      =   457
-      TabIndex        =   22
-      Top             =   1320
+      TabIndex        =   21
+      Top             =   360
       Width           =   5508
    End
    Begin VB.TextBox Text1 
@@ -501,9 +641,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   492
-      Left            =   4200
-      TabIndex        =   20
-      Text            =   "148"
+      Left            =   3720
+      TabIndex        =   19
+      Text            =   "555"
       Top             =   600
       Width           =   1092
    End
@@ -520,8 +660,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   5
       Left            =   1440
-      TabIndex        =   19
-      Top             =   4680
+      TabIndex        =   18
+      Top             =   5520
       Width           =   5292
    End
    Begin VB.TextBox Text13 
@@ -537,9 +677,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   5
       Left            =   240
-      TabIndex        =   18
-      Text            =   "10"
-      Top             =   4680
+      TabIndex        =   17
+      Text            =   "40"
+      Top             =   5520
       Width           =   1092
    End
    Begin VB.TextBox Text14 
@@ -555,8 +695,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   4
       Left            =   1440
-      TabIndex        =   17
-      Top             =   4080
+      TabIndex        =   16
+      Top             =   4920
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -572,8 +712,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   3
       Left            =   1440
-      TabIndex        =   16
-      Top             =   3480
+      TabIndex        =   15
+      Top             =   4320
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -589,8 +729,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   2
       Left            =   1440
-      TabIndex        =   15
-      Top             =   2880
+      TabIndex        =   14
+      Top             =   3720
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -606,8 +746,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   1
       Left            =   1440
-      TabIndex        =   14
-      Top             =   2280
+      TabIndex        =   13
+      Top             =   3120
       Width           =   5292
    End
    Begin VB.TextBox Text14 
@@ -623,8 +763,8 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   0
       Left            =   8880
-      TabIndex        =   13
-      Top             =   8640
+      TabIndex        =   12
+      Top             =   9240
       Width           =   5292
    End
    Begin VB.TextBox Text13 
@@ -640,9 +780,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   4
       Left            =   240
-      TabIndex        =   12
-      Text            =   "7"
-      Top             =   4080
+      TabIndex        =   11
+      Text            =   "28"
+      Top             =   4920
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -658,9 +798,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   3
       Left            =   240
-      TabIndex        =   11
-      Text            =   "5"
-      Top             =   3480
+      TabIndex        =   10
+      Text            =   "20"
+      Top             =   4320
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -676,9 +816,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   2
       Left            =   240
-      TabIndex        =   3
-      Text            =   "3"
-      Top             =   2880
+      TabIndex        =   2
+      Text            =   "12"
+      Top             =   3720
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -694,9 +834,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   1
       Left            =   240
-      TabIndex        =   10
-      Text            =   "1"
-      Top             =   2280
+      TabIndex        =   9
+      Text            =   "4"
+      Top             =   3120
       Width           =   1092
    End
    Begin VB.TextBox Text13 
@@ -712,9 +852,9 @@ Begin VB.Form Form1
       Height          =   492
       Index           =   0
       Left            =   7680
-      TabIndex        =   9
+      TabIndex        =   8
       Text            =   "0"
-      Top             =   8640
+      Top             =   9240
       Width           =   1092
    End
    Begin VB.TextBox Text12 
@@ -729,7 +869,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   495
       Left            =   240
-      TabIndex        =   8
+      TabIndex        =   7
       Text            =   "File Executable"
       Top             =   1320
       Width           =   6492
@@ -746,7 +886,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   492
       Left            =   1560
-      TabIndex        =   7
+      TabIndex        =   6
       Text            =   "5"
       Top             =   600
       Width           =   1092
@@ -764,8 +904,8 @@ Begin VB.Form Form1
       EndProperty
       Height          =   372
       Left            =   240
-      TabIndex        =   5
-      Top             =   600
+      TabIndex        =   4
+      Top             =   720
       Width           =   1092
    End
    Begin VB.CheckBox Check1 
@@ -781,8 +921,8 @@ Begin VB.Form Form1
       EndProperty
       Height          =   372
       Left            =   240
-      TabIndex        =   4
-      Top             =   120
+      TabIndex        =   3
+      Top             =   240
       Value           =   1  'Checked
       Width           =   1092
    End
@@ -799,24 +939,41 @@ Begin VB.Form Form1
       EndProperty
       Height          =   372
       Left            =   13680
-      TabIndex        =   2
-      Top             =   7680
+      TabIndex        =   1
+      Top             =   6720
       Width           =   2412
+   End
+   Begin VB.Label Label8 
+      Caption         =   "Set"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   10.8
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   252
+      Left            =   4920
+      TabIndex        =   59
+      Top             =   240
+      Width           =   492
    End
    Begin VB.Label Label13 
       Caption         =   "Scale Y"
       Height          =   372
       Left            =   13680
-      TabIndex        =   43
-      Top             =   3720
+      TabIndex        =   41
+      Top             =   2760
       Width           =   1572
    End
    Begin VB.Label Label12 
       Caption         =   "Scale X"
       Height          =   372
       Left            =   13680
-      TabIndex        =   42
-      Top             =   3000
+      TabIndex        =   40
+      Top             =   2040
       Width           =   1572
    End
    Begin VB.Label Label11 
@@ -833,8 +990,8 @@ Begin VB.Form Form1
       EndProperty
       Height          =   252
       Left            =   11520
-      TabIndex        =   37
-      Top             =   1080
+      TabIndex        =   35
+      Top             =   120
       Width           =   1572
    End
    Begin VB.Label Label10 
@@ -850,8 +1007,8 @@ Begin VB.Form Form1
       EndProperty
       Height          =   252
       Left            =   7680
-      TabIndex        =   36
-      Top             =   1080
+      TabIndex        =   34
+      Top             =   120
       Width           =   1572
    End
    Begin VB.Label Label9 
@@ -868,8 +1025,8 @@ Begin VB.Form Form1
       EndProperty
       Height          =   252
       Left            =   11280
-      TabIndex        =   35
-      Top             =   8160
+      TabIndex        =   33
+      Top             =   7200
       Width           =   1812
    End
    Begin VB.Label Label6 
@@ -885,32 +1042,15 @@ Begin VB.Form Form1
       EndProperty
       Height          =   252
       Left            =   7680
-      TabIndex        =   34
-      Top             =   8160
+      TabIndex        =   32
+      Top             =   7200
       Width           =   1572
    End
-   Begin VB.Label Label8 
-      Caption         =   "Università Telematica Internazionale UNINETTUNO"
-      BeginProperty Font 
-         Name            =   "Segoe UI"
-         Size            =   14.4
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   372
-      Left            =   7680
-      TabIndex        =   32
-      Top             =   600
-      Width           =   6972
-   End
    Begin VB.Label Label7 
-      Caption         =   "Fabio Listante "
+      Caption         =   "Fabio Listante - Università Telematica Internazionale UNINETTUNO v.32"
       BeginProperty Font 
          Name            =   "Segoe UI"
-         Size            =   14.4
+         Size            =   10.2
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -919,9 +1059,9 @@ Begin VB.Form Form1
       EndProperty
       Height          =   372
       Left            =   7680
-      TabIndex        =   31
-      Top             =   120
-      Width           =   1932
+      TabIndex        =   30
+      Top             =   8760
+      Width           =   8412
    End
    Begin VB.Label Label5 
       Caption         =   "%"
@@ -934,11 +1074,11 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   255
+      Height          =   252
       Left            =   2880
-      TabIndex        =   30
+      TabIndex        =   29
       Top             =   240
-      Width           =   1215
+      Width           =   732
    End
    Begin VB.Label Label4 
       Caption         =   "SEED"
@@ -951,11 +1091,11 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   255
-      Left            =   4200
-      TabIndex        =   21
+      Height          =   252
+      Left            =   3720
+      TabIndex        =   20
       Top             =   240
-      Width           =   1095
+      Width           =   1092
    End
    Begin VB.Label Label3 
       Caption         =   "adjacent bits"
@@ -970,7 +1110,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   255
       Left            =   1560
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   240
       Width           =   1215
    End
@@ -986,26 +1126,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   252
-      Left            =   1680
-      TabIndex        =   1
-      Top             =   1920
-      Width           =   1572
-   End
-   Begin VB.Label Label1 
-      Caption         =   "SEU amount"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   10.8
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   252
-      Left            =   240
+      Left            =   2880
       TabIndex        =   0
-      Top             =   1920
+      Top             =   2760
       Width           =   1572
    End
 End
@@ -1015,7 +1138,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Option Explicit
-Dim SEU_matrice(10, 200) As Double       'matrice dei byte affetti da SE
+Dim SEU_matrice(10, 1000) As Double       'matrice dei byte affetti da SE
 Dim X As String * 1                     'coordinata x nella mappa BMP di visualizzazione SEU
 Dim Y As String * 1                     'coordinata y nella mappa BMP di visualizzazione SEU
 Dim op_code As String * 1               'singolo byte del file eseguibile
@@ -1024,9 +1147,10 @@ Dim headBMPw As String * 54             'intestazione per creazione file BMP non
 Dim cx As Double                        'ampiezza mappa BMP di visualizzazione SEU
 Dim cy As Double                        'altezza mappa BMP di visualizzazione SEU
 Dim xdum As Integer                     'numero byte dummy per terminare la riga BMP (multiplo x4)
-Dim corrente, maschera As Double        'puntatore al byte n del file eseguibile
+Dim corrente As Long        'puntatore al byte n del file eseguibile
+Dim maschera As Long
 Dim spot_x, spot_y As Integer           'coordinate matrice reale nel .BMP (compreso riempimento dummy)
-Dim kf, lf As Double                    'dimensione file
+Dim kf, lf, fpmk As Double              'dimensione file
 
 
 
@@ -1037,14 +1161,15 @@ For f = 2 To 11
     Open Text14(f - 1).Text For Binary As f
     Next f
 
-kf = LOF(1)                             'imposta termine file eseguibile
-For SEU_n = 1 To 10                      'crea maschere per i punti SE specificati
-    For SEU_pos = 1 To Text13(SEU_n)
+kf = LOF(1)                                                 'imposta termine file eseguibile
+fpmk = kf / 131072 * (1 + Option1.Value) - Option1.Value    'costante di divisione se settato "flip x megabit"
+For SEU_n = 1 To 10                                         'crea maschere per i punti SE specificati
+    For SEU_pos = 1 To Val(Text13(SEU_n).Text) * fpmk       'se
         SEU_matrice(SEU_n, SEU_pos) = 1 + Int(kf * Rnd())
         Next SEU_pos
     Next SEU_n
 
-For n = 1 To kf                         'crea le copie dei programmi eseguibili con differente nome....
+For n = 1 To kf                                             'crea le copie dei programmi eseguibili con differente nome....
     Get 1, n, X
     Put 2, n, X
     Put 3, n, X
@@ -1058,17 +1183,18 @@ For n = 1 To kf                         'crea le copie dei programmi eseguibili 
     Put 11, n, X
     Next
 'Stop
-For SEU_n = 1 To 10                       '...a seconda dei SEU contenuti
-    For SEU_pos = 1 To Text13(SEU_n)
+
+For SEU_n = 1 To 10                                         '...a seconda dei SEU contenuti
+    For SEU_pos = 1 To Val(Text13(SEU_n).Text) * fpmk
         spot = SEU_matrice(SEU_n, SEU_pos)
         Get SEU_n + 1, spot, X
         'Get 1, spot, x
         Bit = Int(8 * Rnd())
-        Y = Chr(Asc(X) Xor (2 ^ Bit))    'flippa i bit impostati nella maschera
+        Y = Chr(Asc(X) Xor (2 ^ Bit))                       'flippa i bit impostati nella maschera
         Put SEU_n + 1, spot, Y
         Next SEU_pos
     Next SEU_n
-Close 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11              'chiude i file pronti per l'uso
+Close 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11                     'chiude i file pronti per l'uso
 End Sub
 
 ' procedura per visualizzare i SEU creati nelle singole maschere
@@ -1088,18 +1214,8 @@ For spot = 1 To kf
     Next spot
 
 ' visualizza quelli della maschera selezionata
-'For MEU_pos = 1 To Val(Text13(Index).Text) * Text2.Text / 100
-'    spot = SEU_matrice(Index, MEU_pos)
-'    spot_x = spot Mod cx
-'    spot_y = spot \ cy
-'    maschera = 55 + 3 * (spot_x + spot_y * cx) + xdum * spot_y
-'    Get 2, maschera, RGB
-'    Mid(RGB, 2, 1) = Chr(255)
-'    Put 2, maschera, RGB
-'    Next SEU_pos
-
-'Stop
-For SEU_pos = 1 To Val(Text13(Index).Text)
+fpmk = kf / 131072 * (1 + Option1.Value) - Option1.Value
+For SEU_pos = 1 To Val(Text13(Index).Text) * fpmk
     spot = SEU_matrice(Index, SEU_pos)
     spot_x = spot Mod cx
     spot_y = spot \ cy
@@ -1120,16 +1236,18 @@ Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.Scal
   
 End Sub
 
-Private Sub Command3_Click()
+Private Sub Command3_Click()     'apply
 
 'Rnd ()   'imposta il valore di seed per la funzione random
-Randomize (Val(Text1.Text))
+'Randomize (Val(Text1.Text))
+Text5.Text = Val(Text5.Text) + 1
 Open Text12.Text For Binary As 1
 
 lf = FileLen(Text12.Text)
 kf = LOF(1)
+fpmk = kf / 131072 * (1 + Option1.Value) - Option1.Value
 For SEU_n = 1 To 10
-    For SEU_pos = 1 To Text13(SEU_n)
+    For SEU_pos = 1 To Text13(SEU_n) * fpmk
         SEU_matrice(SEU_n, SEU_pos) = 1 + Int(kf * Rnd())
         Next SEU_pos
     Next SEU_n
@@ -1147,16 +1265,24 @@ Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.Scal
   
 End Sub
 
+
+
 Private Sub Form_Load()
 'Picture1.Picture = LoadPicture("info2.jpg")
 Picture1.ScaleWidth = Text3.Text
 Picture1.ScaleHeight = Text4.Text
 Picture1.ScaleMode = 0
 'Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.ScaleHeight, 0, 0, Picture1.Picture.Width / 26.46, Picture1.Picture.Height / 26.46
-Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.ScaleHeight, 0, 0, Picture1.Picture.Width, Picture1.Picture.Height
-   
+Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.ScaleHeight, 0, 0, Picture1.Picture.Width + 0, Picture1.Picture.Height
+Option2.Value = True
+Option3.Value = True
+'Stop
 For Each Control In Form1.Controls
     If InStr(Control.Name, "Label") <> 0 Then
+        CtrlName = Control.Name
+        Form1(CtrlName).BackColor = &HFCFFF8
+        End If
+    If InStr(Control.Name, "Option*") <> 0 Then
         CtrlName = Control.Name
         Form1(CtrlName).BackColor = &HFCFFF8
         End If
@@ -1173,6 +1299,14 @@ For Each Control In Form1.Controls
         Text14(n).BackColor = &HFCFFF8
         Next
     Next
+    
+Frame1.BackColor = &HFCFFF8
+Frame2.BackColor = &HFCFFF8
+Option1.BackColor = &HFCFFF8
+Option2.BackColor = &HFCFFF8
+Option3.BackColor = &HFCFFF8
+Option4.BackColor = &HFCFFF8
+
 End Sub
 
 Private Sub Form_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -1191,13 +1325,22 @@ Do While Mid(Text12.Text, n, 1) <> "\"
 ChDir (Left(Text12.Text, n))
 
 ' prepara i nomi dei file con il riferimento al numero di eventi inseriti _Exxx
-nfile = Mid(Text12.Text, 1, Len(Text12.Text) - 4) + "_E"
-For n = 1 To 10
-    Text14(n).Text = nfile + Text13(n).Text + ".com"
-    Next
+nfile = Mid(Text12.Text, 1, Len(Text12.Text) - 4)
+If Option4.Value = True Then 'indexed
+        For n = 1 To 10
+            Text14(n).Text = nfile + "_E" + Text13(n).Text + ".com"
+            Next
+    Else    'sequenzial
+        For n = 1 To 10
+            Text14(n).Text = nfile + "_S" + "0" + Chr(48 + n) + ".com"
+            Next
+        Text14(10).Text = nfile + "_S10.com"
+    End If
 ' apertura eseguibile
 Open Text12.Text For Binary As 1
 kf = LOF(1)
+'Stop
+
 ' crea una mappa quadrata di ampiezza radice(byte eseguibile) per compattare la visualizzazione
 cx = 1 + Int(Sqr(kf))                           'calcolo coordinata x
 cy = 1 + Int(Sqr(kf))                           'calcolo coordinata y
@@ -1213,7 +1356,7 @@ lBMP = 54 + (cx * 3 + xdum) * cy                'calcolo lunghezza file BMP
 If Dir("box.bmp") <> "" Then Kill ("box.bmp")
 'Stop
 ' lo apre ricreando le varie parti
-Open "box.bmp" For Random As 2
+Open "box.bmp" For Binary As 2
 
 ' ===== inizio creazione BMP della mappa =====
 headBMP = Chr(66) + Chr(77)                     'crea header BMP (magic number)
@@ -1251,7 +1394,7 @@ headBMP = headBMP + Chr(0) + Chr(0) + Chr(0) + Chr(0)
 headBMP = headBMP + Chr(0) + Chr(0) + Chr(0) + Chr(0)
 headBMPw = headBMP
 Put 2, 1, headBMPw
-
+'Stop
 'inizio matrice BMP
 corrente = 1
 Do
@@ -1260,7 +1403,7 @@ For spot_y = 1 To cy
         Get 1, corrente, op_code
         RGB = Chr(0) + Chr(0) + Chr(Asc(op_code))
         Select Case Asc(op_code)
-            Case 32, 33, 65 To 90, 97 To 122
+            Case 32 To 126
             RGB = Chr(255) + Chr(0) + Chr(Asc(op_code))
             Case Else
             RGB = Chr(0) + Chr(0) + Chr(Asc(op_code))
@@ -1276,6 +1419,8 @@ For spot_y = 1 To cy
         Next spot_x
     Next spot_y
     Loop
+    'Stop
+    Put 2, maschera, RGB + String(14 * cx, Chr(0))
 Close 1, 2
 ' adatta il frame della mappa alla picture del form
 Picture1.Picture = LoadPicture("box.bmp")
@@ -1285,22 +1430,32 @@ Picture1.ScaleMode = 0
 'Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.ScaleHeight, 0, 0, Picture1.Picture.Width / 26.46, Picture1.Picture.Height / 26.46
 Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.ScaleHeight, 0, 0, Picture1.Picture.Width, Picture1.Picture.Height
                           
-'Rnd ()   'imposta il valore di seed per la funzione random
-Randomize (Val(Text1.Text))
-Open Text12.Text For Binary As 1
-
-lf = FileLen(Text12.Text)
-kf = LOF(1)
-For SEU_n = 1 To 10
-    For SEU_pos = 1 To Text13(SEU_n)
-        SEU_matrice(SEU_n, SEU_pos) = 1 + Int(kf * Rnd())
-        Next SEU_pos
-    Next SEU_n
-Close 1
+Command5_Click
+Command2_Click (0)
 End Sub
 
 Private Sub Picture1_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, X As Single, Y As Single)
 'Stop
 Call Form_OLEDragDrop(Data, 0, 0, 0, 0, 0)
+
+End Sub
+Private Sub Command5_Click()
+
+'Randomize ()     'imposta il valore di seed per la funzione random
+'Stop
+Rnd (-Val(Text1.Text))                        'reset randomizzatore
+Text5.Text = 1
+Open Text12.Text For Binary As 1
+
+lf = FileLen(Text12.Text)
+kf = LOF(1)
+fpmk = kf / 131072 * (1 + Option1.Value) - Option1.Value
+'Stop
+For SEU_n = 1 To 10
+    For SEU_pos = 1 To Text13(SEU_n) * fpmk
+        SEU_matrice(SEU_n, SEU_pos) = 1 + Int(kf * Rnd())
+        Next SEU_pos
+    Next SEU_n
+Close 1
 
 End Sub
