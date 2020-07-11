@@ -16,6 +16,14 @@ Begin VB.Form Form1
    ScaleHeight     =   765
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   1116
+   Begin VB.CommandButton Command6 
+      Caption         =   "Command6"
+      Height          =   252
+      Left            =   14520
+      TabIndex        =   66
+      Top             =   8280
+      Width           =   972
+   End
    Begin VB.Frame Frame1 
       Appearance      =   0  'Flat
       BackColor       =   &H80000005&
@@ -135,7 +143,7 @@ Begin VB.Form Form1
       Height          =   492
       Left            =   4920
       TabIndex        =   58
-      Text            =   "-"
+      Text            =   "1"
       Top             =   600
       Width           =   492
    End
@@ -499,7 +507,7 @@ Begin VB.Form Form1
       Height          =   492
       Left            =   2880
       TabIndex        =   28
-      Text            =   "5"
+      Text            =   "3"
       Top             =   600
       Width           =   732
    End
@@ -643,7 +651,7 @@ Begin VB.Form Form1
       Height          =   492
       Left            =   3720
       TabIndex        =   19
-      Text            =   "555"
+      Text            =   "348"
       Top             =   600
       Width           =   1092
    End
@@ -1047,7 +1055,7 @@ Begin VB.Form Form1
       Width           =   1572
    End
    Begin VB.Label Label7 
-      Caption         =   "SEUSIM v.33"
+      Caption         =   "SEUSIM v.34"
       BeginProperty Font 
          Name            =   "Segoe UI"
          Size            =   10.2
@@ -1138,7 +1146,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Option Explicit
-Dim SEU_matrice(10, 1000) As Double       'matrice dei byte affetti da SE
+Dim SEU_matrice(10, 1000) As Double     'matrice dei byte affetti da SE
 Dim X As String * 1                     'coordinata x nella mappa BMP di visualizzazione SEU
 Dim Y As String * 1                     'coordinata y nella mappa BMP di visualizzazione SEU
 Dim op_code As String * 1               'singolo byte del file eseguibile
@@ -1147,27 +1155,23 @@ Dim headBMPw As String * 54             'intestazione per creazione file BMP non
 Dim cx As Double                        'ampiezza mappa BMP di visualizzazione SEU
 Dim cy As Double                        'altezza mappa BMP di visualizzazione SEU
 Dim xdum As Integer                     'numero byte dummy per terminare la riga BMP (multiplo x4)
-Dim corrente As Long        'puntatore al byte n del file eseguibile
+Dim corrente As Long                    'puntatore al byte n del file eseguibile
 Dim maschera As Long
 Dim spot_x, spot_y As Integer           'coordinate matrice reale nel .BMP (compreso riempimento dummy)
 Dim kf, lf, fpmk As Double              'dimensione file
 
 
+'34 aggiustate le posizioni degli spot
 
 Private Sub Command1_Click()
 Open Text12.Text For Binary As 1
-'                                        crea i file per ogni maschera di SE
+                                                            'crea i file per ogni maschera di SE
 For f = 2 To 11
     Open Text14(f - 1).Text For Binary As f
     Next f
 
 kf = LOF(1)                                                 'imposta termine file eseguibile
 fpmk = kf / 131072 * (1 + Option1.Value) - Option1.Value    'costante di divisione se settato "flip x megabit"
-For SEU_n = 1 To 10                                         'crea maschere per i punti SE specificati
-    For SEU_pos = 1 To Val(Text13(SEU_n).Text) * fpmk       'se
-        SEU_matrice(SEU_n, SEU_pos) = 1 + Int(kf * Rnd())
-        Next SEU_pos
-    Next SEU_n
 
 For n = 1 To kf                                             'crea le copie dei programmi eseguibili con differente nome....
     Get 1, n, X
@@ -1184,13 +1188,12 @@ For n = 1 To kf                                             'crea le copie dei p
     Next
 'Stop
 
-For SEU_n = 1 To 10                                         '...a seconda dei SEU contenuti
+For SEU_n = 1 To 10                                         '...a seconda dei SEU impostati
     For SEU_pos = 1 To Val(Text13(SEU_n).Text) * fpmk
         spot = SEU_matrice(SEU_n, SEU_pos)
         Get SEU_n + 1, spot, X
-        'Get 1, spot, x
         Bit = Int(8 * Rnd())
-        Y = Chr(Asc(X) Xor (2 ^ Bit))                       'flippa i bit impostati nella maschera
+        Y = Chr(Asc(X) Xor (2 ^ Bit))                       'flippa 1 bit random del byte nella posizione indicata nella maschera
         Put SEU_n + 1, spot, Y
         Next SEU_pos
     Next SEU_n
@@ -1204,7 +1207,7 @@ Open Text12.Text For Binary As 1
 
 ' spegne tutti i bit nella mappa eventi
 kf = LOF(1)
-For spot = 1 To kf
+For spot = 0 To kf
     spot_x = spot Mod cx
     spot_y = spot \ cy
     maschera = 55 + 3 * (spot_x + spot_y * cx) + xdum * spot_y
@@ -1216,7 +1219,7 @@ For spot = 1 To kf
 ' visualizza quelli della maschera selezionata
 fpmk = kf / 131072 * (1 + Option1.Value) - Option1.Value
 For SEU_pos = 1 To Val(Text13(Index).Text) * fpmk
-    spot = SEU_matrice(Index, SEU_pos)
+    spot = SEU_matrice(Index, SEU_pos) - 1          'il primo byte è maschera +0
     spot_x = spot Mod cx
     spot_y = spot \ cy
     maschera = 55 + 3 * (spot_x + spot_y * cx) + xdum * spot_y
@@ -1241,6 +1244,7 @@ Private Sub Command3_Click()     'apply
 'Rnd ()   'imposta il valore di seed per la funzione random
 'Randomize (Val(Text1.Text))
 Text5.Text = Val(Text5.Text) + 1
+Rnd (-Val(Text1.Text) - Val(Text5.Text))                      'reset randomizzatore
 Open Text12.Text For Binary As 1
 
 lf = FileLen(Text12.Text)
@@ -1266,6 +1270,10 @@ Picture1.PaintPicture Picture1.Picture, 0, 0, Picture1.ScaleWidth, Picture1.Scal
 End Sub
 
 
+
+Private Sub Command6_Click()
+Stop
+End Sub
 
 Private Sub Form_Load()
 'Picture1.Picture = LoadPicture("info2.jpg")
